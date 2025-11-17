@@ -14,9 +14,12 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-if (is_readable(__DIR__ . '/config.php')) {
-    require_once __DIR__ . '/config.php';
+if (is_readable(__DIR__ . '/config/contentBridge.php')) {
+    require_once __DIR__ . '/config/contentBridge.php';
 }
+
+
+
 
 // custom code for the current project
 
