@@ -14,15 +14,14 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-if (is_readable(__DIR__ . '/config/contentBridge.php')) {
-    require_once __DIR__ . '/config/contentBridge.php';
-}
-
-
-
-
 // custom code for the current project
 
+// Load configuration files.
+foreach ( glob(__DIR__ . '/config/*.php' ) as $file ) {
+    if ( is_readable( $file ) ) {
+        require_once $file;
+    }
+}
 
 /**
  * Set the environment type
