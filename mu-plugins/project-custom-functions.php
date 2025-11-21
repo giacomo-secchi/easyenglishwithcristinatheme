@@ -17,8 +17,12 @@ if ( ! defined( 'WPINC' ) ) {
 // custom code for the current project
 
 // Load configuration files.
-foreach ( glob(__DIR__ . '/config/*.php' ) as $file ) {
-    if ( is_readable( $file ) ) {
+foreach ( glob(__DIR__ . '/config/*.php' ) as $file) {
+    if (basename($file)[0] === '_') {
+		continue;
+    }
+
+	if ( is_readable( $file ) ) {
         require_once $file;
     }
 }
